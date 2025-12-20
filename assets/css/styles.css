@@ -4401,6 +4401,14 @@ img.u-pull-left {
     border-radius : 14px;
     padding       : 2rem 2.4rem;
     box-shadow    : 0 16px 32px rgba(0, 0, 0, 0.4);
+    transition    : transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.publication-card:hover,
+.publication-card:focus-within {
+    transform   : translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow  : 0 22px 40px rgba(0, 0, 0, 0.5);
 }
 
 .publication-tag {
@@ -4451,6 +4459,17 @@ img.u-pull-left {
 @media screen and (max-width: 900px) {
     .publications-grid {
         grid-template-columns : 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .publication-card {
+        transition : none;
+    }
+
+    .publication-card:hover,
+    .publication-card:focus-within {
+        transform : none;
     }
 }
 
@@ -4910,36 +4929,14 @@ img.u-pull-left {
 }
 
 .space-button:active {
-    scale : 1;
-    --bg  : linear-gradient(
-        180deg,
-        #050506 0%,
-        #0a0d14 34%,
-        #4769ff 47%,
-        #9db9ff 55%,
-        #f7f9ff 58%,
-        #cc7b69 63%,
-        #2b0f0a 70%,
-        #050506 100%
-    );
-    box-shadow :
-        0 0 calc(var(--active) * 6em) calc(var(--active) * 3em)
-            hsl(245 97% 61% / 0.5),
-        0 0.05em 0 0
-            hsl(245 calc(var(--active) * 97%) calc((var(--active) * 50%) + 30%)) inset,
-        0 -0.05em 0 0
-            hsl(245 calc(var(--active) * 97%) calc(var(--active) * 10%)) inset;
+    scale : calc(1 + (var(--active) * 0.1));
     background : var(--bg);
 }
 
 .space-button:active .text {
-    font-weight : 300;
-    animation   :
-        wobble 0.6s ease-in-out infinite,
-        blurMove 1.5s ease-in-out infinite;
-    text-shadow :
-        5px 5px 20px rgba(255, 255, 255, 0.8),
-        10px 10px 30px rgba(255, 0, 255, 0.6);
+    font-weight : 600;
+    animation   : none;
+    text-shadow : none;
 }
 
 @keyframes wobble {
