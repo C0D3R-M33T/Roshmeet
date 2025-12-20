@@ -4333,6 +4333,57 @@ img.u-pull-left {
     }
 }
 
+.contact-graphic {
+    display     : flex;
+    align-items : center;
+    justify-content : center;
+}
+
+.contact-social-icons {
+    display : flex;
+    gap : 2.2rem;
+    align-items : center;
+    justify-content : center;
+    text-align : center;
+    flex-wrap : nowrap;
+}
+
+.social-icon-link {
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    gap : 0.6rem;
+    color : var(--color-text, #e6e6e6);
+    text-decoration : none;
+    text-transform : uppercase;
+    letter-spacing : 0.14em;
+    font-size : 0.72rem;
+}
+
+.social-icon-link img {
+    width : 42px;
+    height : 42px;
+    filter : invert(1) brightness(1.05);
+    transition : transform 0.25s ease, filter 0.25s ease;
+}
+
+.social-icon-link:hover img,
+.social-icon-link:focus-visible img {
+    transform : translateY(-4px);
+    filter : invert(1) brightness(1.35);
+}
+
+@media (max-width: 700px) {
+    .contact-social-icons {
+        gap : 1.4rem;
+    }
+
+    .social-icon-link img {
+        width : 36px;
+        height : 36px;
+    }
+}
+
 .publications {
     padding-top : var(--vspace-2);
 }
