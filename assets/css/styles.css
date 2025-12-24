@@ -4212,6 +4212,12 @@ img.u-pull-left {
     display : none;
 }
 
+.ss-footer-resume {
+    display         : flex;
+    justify-content : flex-end;
+    align-items     : center;
+}
+
 /* ------------------------------------------------------------------- 
  * ## go top
  * ------------------------------------------------------------------- */
